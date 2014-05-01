@@ -26,6 +26,14 @@ if os.path.exists(buildPath):
 # Move into folder
 os.chdir(folderPath)
 
+# Checkout desired branch and install dependencies
+process = subprocess.Popen(["git", "checkout","dev-0.3"], stdout=subprocess.PIPE)
+print process.communicate()[0]
+
+print '... Checking dependencies ...'
+process = subprocess.Popen(["npm", "install"], stdout=subprocess.PIPE)
+print process.communicate()[0]
+
 # Pull for updates
 print '... Pulling ...'
 process = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE)
@@ -75,7 +83,10 @@ print process.communicate()[0]
 
 # Update website ?
 
+# Print commit shortened hash
+process = subprocess.Popen(["git","log","--pretty=format:'%h'","-n 1"], stdout=subprocess.PIPE)
+print 'Commit Shortened Hash : '+process.communicate()[0]
+
 print '-- Ending --'
 sys.exit(0)
-
 
