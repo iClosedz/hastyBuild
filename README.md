@@ -7,9 +7,9 @@ Build scripts for HastyPopCorn
 
 python 2, npm, nodejs, grunt and bower
 
-1- Python 2 : https://www.python.org/download/
-2- nodejs and npm : http://nodejs.org/
-3- grunt and bower : `npm install -g grunt-cli bower`
+1. Python 2 : https://www.python.org/download/
+2. nodejs and npm : http://nodejs.org/
+3. grunt and bower : `npm install -g grunt-cli bower`
 
 You also need a clone of Popcorn offical repo on your local disk :
 `git clone https://github.com/popcorn-official/popcorn-app`
