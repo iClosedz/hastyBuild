@@ -57,26 +57,28 @@ print '=> Linux64'
 process = subprocess.Popen(["grunt", "build", "--platforms=linux64"], stdout=subprocess.PIPE)
 print process.communicate()[0]
 
+
 # Compressing
-prefix = buildPath+'/popcorn_'+datetime.datetime.now().strftime("%Y%m%d")+'_'
+os.chdir(buildPath)
+prefix = 'popcorn_'+datetime.datetime.now().strftime("%Y%m%d")+'_'
 print '... Compressing ...'
 print '=> Mac'
-process = subprocess.Popen(["zip","-r", prefix+'mac', buildPath+'/mac'], stdout=subprocess.PIPE)
+process = subprocess.Popen(["zip","-r", prefix+'mac', 'mac'], stdout=subprocess.PIPE)
 print process.communicate()[0]
 
 print '... Compressing ...'
 print '=> Windows'
-process = subprocess.Popen(["zip","-r", prefix+'win', buildPath+'/win'], stdout=subprocess.PIPE)
+process = subprocess.Popen(["zip","-r", prefix+'win', 'win'], stdout=subprocess.PIPE)
 print process.communicate()[0]
 
 print '... Compressing ...'
 print '=> Linux32'
-process = subprocess.Popen(["zip","-r", prefix+'linux32', buildPath+'/linux32'], stdout=subprocess.PIPE)
+process = subprocess.Popen(["zip","-r", prefix+'linux32', 'linux32'], stdout=subprocess.PIPE)
 print process.communicate()[0]
 
 print '... Compressing ...'
 print '=> Linux64'
-process = subprocess.Popen(["zip","-r", prefix+'linux64', buildPath+'/linux64'], stdout=subprocess.PIPE)
+process = subprocess.Popen(["zip","-r", prefix+'linux64', 'linux64'], stdout=subprocess.PIPE)
 print process.communicate()[0]
 
 # Upload to Mega via API ?
