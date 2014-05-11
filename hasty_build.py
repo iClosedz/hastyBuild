@@ -18,7 +18,7 @@ if not os.path.exists(folderPath):
 	sys.exit(2)
 
 # Delete previous builds if any
-buildPath = folderPath+'/build/releases/PopCorn-Time'
+buildPath = folderPath+'/build/releases/Popcorn-Time'
 if os.path.exists(buildPath):
 	print '-- Deleting previous builds --'
 	shutil.rmtree(buildPath)
